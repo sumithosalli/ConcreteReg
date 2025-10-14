@@ -174,5 +174,3 @@ if __name__ == "__main__":
     joblib.dump(model, 'concrete_strength_model.pkl')
     print("\n✅ Model trained and saved successfully!")  
     get_user_input_and_predict(scaler, model)
-      
-      #540.0	0.0	0.0	162.0	2.5	1040.0		28	79.99	3.333333	15120.0
