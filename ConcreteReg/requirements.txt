@@ -1,0 +1,10 @@
+# requirements.txt
+
+# Add the required packages used in train_model.py below.
+# Example:
+numpy
+pandas
+scikit-learn
+joblib
+
+# If train_model.py uses other libraries, add them here.
