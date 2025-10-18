@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - ConcreteReg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="logo-container">
+                        <h1 class="animate-gradient">ConcreteReg</h1>
+                    </div>
+                </div>
+                <div class="nav-scroll-container">
+                    <div class="nav-links">
+                        <a href="/" class="nav-item" data-color="#4F46E5">Home</a>
+                        <a href="/about" class="nav-item" data-color="#7C3AED">About</a>
+                        <a href="/services" class="nav-item" data-color="#EC4899">Services</a>
+                        <a href="/contact" class="nav-item active" data-color="#10B981">Contact</a>
+                        <a href="/documentation" class="nav-item" data-color="#F59E0B">Documentation</a>
+                        <a href="/blog" class="nav-item" data-color="#EF4444">Blog</a>
+                        <div class="nav-indicator"></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Have questions, feedback, or collaboration ideas? We'd love to hear from you!</p>
+
+                <form>
+                  <label>Name:</label>
+                  <input type="text" placeholder="Enter your name">
+                  
+                  <label>Email:</label>
+                  <input type="email" placeholder="Enter your email">
+                  
+                  <label>Message:</label>
+                  <textarea placeholder="Your message here..."></textarea>
+                  
+                  <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="email-box">
+                    <p>Email: <a href="mailto:1da23i052.ai@drait.edu.in">1da23i052.ai@drait.edu.in</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 ConcreteReg. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert('Message sent successfully'); // Show success alert
+            window.location.href = '/'; // Redirect to contact page
+        });
+    </script>
+</body>
+</html>

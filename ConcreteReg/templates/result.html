@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result - ConcreteReg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../static/result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>ConcreteReg</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+                <a href="/documentaion">Documentation</a>
+                <a href="/blog">Blog</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="result-container">
+                <div class="result-header">
+                    <h2>Predicted Concrete Strength</h2>
+                </div>
+                <div class="strength-display">
+                    <div class="strength-value">{{ prediction }}</div>
+                    <div class="strength-unit">MPa</div>
+                </div>
+                <a href="/" class="back-button">Go Back</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 ConcreteReg. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

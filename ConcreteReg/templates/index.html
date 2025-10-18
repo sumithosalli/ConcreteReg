@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ConcreteReg - Concrete Strength Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', path='index.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <h1 class="animate-gradient">ConcreteReg</h1>
+                </div>
+            </div>
+            <div class="nav-scroll-container">
+                <div class="nav-links">
+                    <a href="/" class="nav-item active" data-color="#4F46E5">Home</a>
+                    <a href="/about" id="about-link" class="nav-item" data-color="#7C3AED">About</a>
+                    <a href="/services" class="nav-item" data-color="#EC4899">Services</a>
+                    <a href="/contact" class="nav-item" data-color="#10B981">Contact</a>
+                    <a href="/documentation" class="nav-item" data-color="#F59E0B">Documentation</a>
+                    <a href="/blog" class="nav-item" data-color="#EF4444">Blog</a>
+                    <div class="nav-indicator"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="form-header">
+            <h2>Predict Concrete Strength</h2>
+            <p>Enter the mixture components to predict concrete strength</p>
+        </div>
+        
+        <form method="post" action="/predict" class="prediction-form">
+            <div class="form-group">
+                <label for="cement">
+                    <span class="label-text">Cement</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="cement" name="cement" required min="0" step="0.01" 
+                       placeholder="Enter cement quantity">
+            </div>
+
+            <div class="form-group">
+                <label for="blast_furnace_slag">
+                    <span class="label-text">Blast Furnace Slag</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="blast_furnace_slag" name="blast_furnace_slag" required min="0" step="0.01"
+                       placeholder="Enter blast furnace slag">
+            </div>
+
+            <div class="form-group">
+                <label for="fly_ash">
+                    <span class="label-text">Fly Ash</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="fly_ash" name="fly_ash" required min="0" step="0.01"
+                       placeholder="Enter fly ash">
+            </div>
+
+            <div class="form-group">
+                <label for="water">
+                    <span class="label-text">Water</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="water" name="water" required min="0" step="0.01"
+                       placeholder="Enter water quantity">
+            </div>
+
+            <div class="form-group">
+                <label for="superplasticizer">
+                    <span class="label-text">Superplasticizer</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="superplasticizer" name="superplasticizer" required min="0" step="0.01"
+                       placeholder="Enter superplasticizer">
+            </div>
+
+            <div class="form-group">
+                <label for="coarse_aggregate">
+                    <span class="label-text">Coarse Aggregate</span>
+                    <span class="unit">(kg)</span>
+                </label>
+                <input type="number" id="coarse_aggregate" name="coarse_aggregate" required min="0" step="0.01"
+                       placeholder="Enter coarse aggregate">
+            </div>
+
+            <div class="form-group">
+                <label for="age">
+                    <span class="label-text">Age</span>
+                    <span class="unit">(days)</span>
+                </label>
+                <input type="number" id="age" name="age" required min="1" step="1"
+                       placeholder="Enter concrete age">
+            </div>
+
+            <div class="form-group full-width">
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Predict Strength</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+        </form>
+    </main>
+            <footer class="footer">
+                <p>&copy; 2025 ConcreteReg. All rights reserved.</p>
+            </footer>
+        </div><!-- End of main-content -->
+    </div><!-- End of page-wrapper -->
+
+</body>
+</html>

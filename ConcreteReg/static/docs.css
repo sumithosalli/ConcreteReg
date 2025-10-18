@@ -1,0 +1,173 @@
+.back-to-home-container {
+    margin-top: 20px; /* Add some space above the button */
+    text-align: center; /* Center the button */
+}
+
+.back-to-home-button {
+    display: inline-block;
+    margin-top: 25px; /* Added from about.css */
+    padding: 12px 25px; /* Adjusted from about.css */
+    background-color: #ff6b6b; /* Color from about.css */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded from about.css */
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4); /* Shadow from about.css */
+}
+
+.back-to-home-button:hover {
+    background-color: #ff4757; /* Hover color from about.css */
+    transform: translateY(-5px); /* Hover transform from about.css */
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4); /* Keep consistent shadow on hover */
+    /* Removed animation: pulse as it's not in about.css */
+}
+
+.endpoint-info {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Add space between Endpoint and POST /predict */
+}
+
+.endpoint-info h2 {
+    margin-bottom: 0; /* Remove default bottom margin */
+    white-space: nowrap; /* Prevent "Endpoint" from wrapping */
+}
+
+.endpoint-info h3 {
+    margin-bottom: 0; /* Remove default bottom margin */
+}
+
+.endpoint-info pre {
+    margin: 0; /* Remove default margin from pre tag */
+}
+
+.endpoint-info code {
+    font-size: 0.9em; /* Slightly smaller font for code */
+}
+
+/* Basic styling for spacing in tables */
+.container table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders to ensure spacing is applied correctly */
+    margin-top: 20px; /* Add some space above the table */
+    margin-bottom: 20px; /* Add some space below the table */
+}
+
+.container th,
+.container td {
+    padding: 12px 15px; /* Add padding inside cells */
+    border: 1px solid #ddd; /* Add a light border to cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Specific adjustments for spacing between Type and Required columns */
+.container th:nth-child(2), /* Type header */
+.container td:nth-child(2), /* Type data cell */
+.container th:nth-child(3), /* Required header */
+.container td:nth-child(3) { /* Required data cell */
+    padding-left: 20px; /* Increase left padding for these columns */
+    padding-right: 20px; /* Increase right padding for these columns */
+}
+
+.container th {
+    background-color: #f2f2f2; /* Light grey background for header cells */
+    font-weight: 600; /* Make header text bold */
+}
+
+.container tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+/* --- New Styles for Model Performance Table --- */
+
+/* Highlight best performing models (XGBoost and LGBMRegressor) */
+.container table tbody tr:nth-child(4), /* XGBoost */
+.container table tbody tr:nth-child(5) { /* LGBMRegressor */
+    background-color: #d4edda; /* Light green background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Highlight good performing model (Gradient Boosting) */
+.container table tbody tr:nth-child(3) {
+    background-color: #fff3cd; /* Light yellow background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Highlight decent performing model (Random Forest) */
+.container table tbody tr:nth-child(2) {
+    background-color: #e2e3e5; /* Light grey background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Highlight poor performing model (Linear Regression) */
+.container table tbody tr:nth-child(1) {
+    background-color: #f8d7da; /* Light red background */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for table rows */
+.container table tbody tr:hover {
+    background-color: #e9ecef; /* Slightly darker grey on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Animation for the best performing rows */
+.container table tbody tr:nth-child(4):hover,
+.container table tbody tr:nth-child(5):hover {
+    animation: pulse-highlight 1.5s infinite alternate;
+}
+
+/* Navigation link hover effects using data-color attribute */
+.nav-item {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--data-color, #000); /* Default to black if data-color is not set */
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover {
+    color: var(--data-color, #000); /* Change text color to data-color on hover */
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Set CSS variables for data-color */
+.nav-item[data-color="#4F46E5"] { --data-color: #4F46E5; }
+.nav-item[data-color="#7C3AED"] { --data-color: #7C3AED; }
+.nav-item[data-color="#EC4899"] { --data-color: #EC4899; }
+.nav-item[data-color="#10B981"] { --data-color: #10B981; }
+.nav-item[data-color="#F59E0B"] { --data-color: #F59E0B; }
+.nav-item[data-color="#EF4444"] { --data-color: #EF4444; }
+
+
+/* Keyframes for the pulse animation */
+@keyframes pulse-highlight {
+    from {
+        box-shadow: 0 0 0 0 rgba(144, 238, 144, 0.7); /* Light green pulse */
+    }
+    to {
+        box-shadow: 0 0 0 10px rgba(144, 238, 144, 0); /* Fading out pulse */
+    }
+}
+
+/* Adjustments for the active nav item */
+.nav-item.active {
+    color: #F59E0B; /* Active color */
+}
+.nav-item.active::after {
+    width: 100%;
+    background-color: #F59E0B;
+}

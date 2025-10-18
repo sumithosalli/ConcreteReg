@@ -1,0 +1,275 @@
+/* Root Variables */
+:root {
+    --color-1: #FF1493;  /* Deep Pink */
+    --color-2: #FF0000;  /* Bright Red */
+    --color-3: #FFD700;  /* Gold */
+    --color-4: #00FF00;  /* Lime Green */
+    --color-5: #FF69B4;  /* Hot Pink */
+    --color-6: #32CD32;  /* Lime Green */
+    --surface: #ffffff;  /* White Background */
+    --text: #000000;     /* Black Text */
+    --text-light: #FFB6C1; /* Light Pink */
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text);
+}
+
+/* Page Layout */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: 80px;
+    position: relative;
+}
+
+/* Enhanced Navbar */
+.navbar {
+    background: #FF7F50;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 80px;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(58, 134, 255, 0.3);
+    animation: shimmer 3s infinite linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-brand h1 {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+.nav-links a {
+    color: #2D1810;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #FFDAB9;
+    border: 2px solid #FFA07A;
+    animation: borderRotate 4s linear infinite;
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 127, 80, 0.3);
+    background: linear-gradient(45deg, #FFA500, #FF6347);
+    color: white;
+}
+
+/* Result Container */
+.result-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 222, 173, 0.9), rgba(255, 218, 185, 0.9));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 127, 80, 0.3);
+    animation: float 6s ease-in-out infinite;
+    border: 3px solid transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.result-header h2 {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.strength-display {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #FFDAB9 0%, #FFF8DC 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+.strength-value {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #FF7F50;
+    animation: counter 3s ease-out;
+}
+
+.strength-unit {
+    font-size: 1.5rem;
+    color: #2D1810;
+}
+
+.back-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+    background-size: 300% 300%;
+    color: white;
+    animation: rainbow 5s ease infinite;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 0, 0.2));
+    margin-top: 3rem;
+    border-top: 1px solid var(--color-3);
+}
+
+.footer p {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes borderRotate {
+    0% { border-color: var(--color-1); }
+    25% { border-color: var(--color-2); }
+    50% { border-color: var(--color-3); }
+    75% { border-color: var(--color-4); }
+    100% { border-color: var(--color-5); }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes counter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px;
+        padding: 0.5rem 1rem;
+    }
+
+    .main-content {
+        padding-top: 70px;
+    }
+
+    .result-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .nav-brand h1 {
+        font-size: 1.5rem;
+    }
+    
+    .result-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-brand {
+        width: 100%;
+        text-align: center;
+    }
+}

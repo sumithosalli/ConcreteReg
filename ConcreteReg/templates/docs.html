@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation - ConcreteReg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/docs.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="logo-container">
+                        <h1 class="animate-gradient">ConcreteReg</h1>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-item" data-color="#4F46E5">Home</a>
+                    <a href="/about" id="about-link" class="nav-item" data-color="#7C3AED">About</a>
+                    <a href="/services" class="nav-item" data-color="#EC4899">Services</a>
+                    <a href="/contact" class="nav-item" data-color="#10B981">Contact</a>
+                    <a href="/documentation" class="nav-item active" data-color="#F59E0B">Documentation</a>
+                    <a href="/blog" class="nav-item" data-color="#EF4444">Blog</a>
+                    <div class="nav-indicator"></div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <h1>🧱 Concrete Strength Prediction API</h1>
+            <p>This API predicts the compressive strength of concrete based on its mix composition and curing age.</p>
+        <section>
+            <div class="endpoint-info">
+                <h2>🔹 Endpoint</h2>
+                <h3><pre><code>POST /predict</code></pre></h3>
+            </div>
+        </section>
+        <section>
+            <h2>🔹 Parameters</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>cement</td><td>float</td><td>Yes</td><td>Amount of cement (kg/m³)</td></tr>
+                    <tr><td>blast_furnace_slag</td><td>float</td><td>Yes</td><td>Blast furnace slag (kg/m³)</td></tr>
+                    <tr><td>fly_ash</td><td>float</td><td>Yes</td><td>Fly ash (kg/m³)</td></tr>
+                    <tr><td>water</td><td>float</td><td>Yes</td><td>Water (kg/m³)</td></tr>
+                    <tr><td>superplasticizer</td><td>float</td><td>Yes</td><td>Superplasticizer (kg/m³)</td></tr>
+                    <tr><td>coarse_aggregate</td><td>float</td><td>Yes</td><td>Coarse aggregate (kg/m³)</td></tr>
+                    <tr><td>age</td><td>int</td><td>Yes</td><td>Curing age (days)</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>🔹 Model Performance Comparison</h2>
+            <p>Below are the evaluation metrics of different models used during training:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model Name</th>
+                        <th>Mean Absolute Error (MAE)</th>
+                        <th>Mean Squared Error (MSE)</th>
+                        <th>Root Mean Squared Error (RMSE)</th>
+                        <th>R² Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Linear Regression</td>
+                        <td>8.36</td>
+                        <td>109.31</td>
+                        <td>10.46</td>
+                        <td>0.3386</td>
+                    </tr>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td>3.71</td>
+                        <td>25.67</td>
+                        <td>5.07</td>
+                        <td>0.8967</td>
+                    </tr>
+                    <tr>
+                        <td>Gradient Boosting Regression</td>
+                        <td>3.55</td>
+                        <td>20.98</td>
+                        <td>4.58</td>
+                        <td>0.9275</td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td>2.20</td>
+                        <td>8.98</td>
+                        <td>3.00</td>
+                        <td>0.9689</td>
+                    </tr>
+                    <tr>
+                        <td>LGBMRegressor</td>
+                        <td>2.21</td>
+                        <td>8.66</td>
+                        <td>2.94</td>
+                        <td>0.9701</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 ConcreteReg. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

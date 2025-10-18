@@ -1,0 +1,193 @@
+/* General styles for services page */
+body {
+    font-family: 'Poppins', sans-serif; /* Using Poppins for consistency and modern look */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light cyan background */
+    color: #004d40; /* Dark teal text */
+}
+
+.page-wrapper { /* Added a wrapper for better control */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header styles for the main page title */
+.page-header {
+    background: #00796b; /* Teal header */
+    color: #ffffff;
+    padding-top: 40px;
+    min-height: 80px;
+    border-bottom: #ffab40 4px solid; /* Amber accent */
+    text-align: center;
+    margin-bottom: 30px; /* Space below header */
+}
+
+.page-header h1 {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 2.8em; /* Larger title */
+    animation: fadeInDown 1s ease-out forwards; /* Animation for title */
+}
+
+/* Section styles for the main content area */
+section {
+    background: linear-gradient(135deg, #ffffff, #e6f7ff); /* Softer blue gradient */
+    padding: 35px; /* Slightly more padding */
+    margin-bottom: 35px; /* Slightly more margin */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* Deeper, softer shadow */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background 0.5s ease-in-out;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 30px; /* More space between service blocks */
+    border-left: 7px solid #6a1b9a; /* Stronger purple accent border */
+    border-right: 7px solid #ffab40; /* Stronger amber accent border */
+    position: relative; /* For potential pseudo-elements */
+    overflow: hidden; /* To contain animations */
+}
+
+/* Add a subtle background animation to sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+/* Styling for individual service blocks (h2 and its following content) */
+section h2 {
+    color: #6a1b9a; /* Purple heading */
+    font-size: 2.5em; /* Larger heading size */
+    animation: pulse 2s infinite ease-in-out; /* Slower, more pronounced pulsing animation */
+    margin-bottom: 15px; /* Space below heading */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Stronger text shadow */
+    position: relative; /* For z-index */
+    z-index: 1; /* Ensure text is above background effects */
+}
+
+section p, section ul {
+    font-size: 1.15em; /* Slightly larger text for readability */
+    margin-bottom: 20px;
+    color: #004d40; /* Dark teal text */
+    line-height: 1.8; /* Improved line spacing */
+}
+
+section ul {
+    list-style-type: square; /* Changed bullet points */
+    padding-left: 45px; /* Indentation for list */
+}
+
+section li {
+    margin-bottom: 12px;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+section li:hover {
+    color: #ff6b6b; /* Coral color on hover for list items */
+    transform: translateX(8px); /* More pronounced shift */
+}
+
+/* Hover effect for the entire section */
+section:hover {
+    transform: translateY(-15px); /* More pronounced lift on hover */
+    box-shadow: 0 25px 45px rgba(0,0,0,0.4); /* Stronger shadow on hover */
+    background: linear-gradient(135deg, #e6f7ff, #ffffff); /* Reverse gradient on hover */
+    border-left-color: #f57c00; /* Orange accent border on hover */
+    border-right-color: #4a148c; /* Deep purple accent border on hover */
+}
+
+/* Styling for the "Go back to Home" link */
+.home-link {
+    display: block; /* Make it a block element */
+    text-align: center;
+    margin-top: 50px; /* More space above link */
+    font-size: 1.3em; /* Larger font size */
+    font-weight: bold;
+    color: #6a1b9a; /* Purple link color */
+    text-decoration: none;
+    transition: color 0.4s ease, transform 0.4s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.home-link:hover {
+    color: #f57c00; /* Orange on hover */
+    transform: scale(1.1); /* Larger scale up on hover */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding:1rem 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 0, 0.2));
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--color-3);
+}
+
+.footer p {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-weight: 600;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-70px); } /* More pronounced fade-in */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.08); opacity: 0.7; } /* More pronounced pulse */
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Applying animations to service blocks */
+/* We'll apply animations to the h2 elements within the section */
+section h2:nth-child(odd) { /* Applies to 1st, 3rd, 5th h2 */
+    animation: slideInFromRight 1.2s ease-out forwards; /* Slower, more dramatic slide */
+}
+
+section h2:nth-child(even) { /* Applies to 2nd, 4th h2 */
+    animation: fadeInDown 1.2s ease-out forwards; /* Slower, more dramatic fade-in */
+}
+
+/* Adding a subtle animation to paragraphs on hover */
+section p:hover {
+    color: #f57c00; /* Orange text on hover */
+    transform: translateX(10px); /* More pronounced shift */
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Adding a subtle animation to list items on hover */
+section li:hover {
+    color: #f57c00; /* Orange color on hover for list items */
+    transform: translateX(10px); /* More pronounced shift */
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Ensure nav bar and footer are not affected */
+/* The existing styles for .navbar, .nav-item, .nav-indicator, .footer are assumed to be in other CSS files or correctly applied */
+/* No specific overrides for nav/footer here to ensure they remain unchanged */

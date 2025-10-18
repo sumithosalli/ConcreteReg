@@ -1,0 +1,192 @@
+/* General styles for blog layout */
+body {
+    font-family: 'Poppins', sans-serif; /* Changed font to Poppins as per HTML link */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333;
+}
+
+.page-wrapper {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto;
+    padding: 0 15px; /* Padding on the sides */
+}
+
+/* EnhancedNavbar */
+.navbar {
+    background: #FF7F50;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 80px;
+    z-index: 1000;
+    box-shadow: 0 4px 30px rgba(58, 134, 255, 0.3);
+    animation: shimmer 3s infinite linear;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-brand h1 {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5));
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+.nav-links a {
+    color: #2D1810;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #FFDAB9;
+    border: 2px solid #FFA07A;
+    animation: borderRotate 4s linear infinite;
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 127, 80, 0.3);
+    background: linear-gradient(45deg, #FFA500, #FF6347);
+    color: white;
+}
+
+/* Blog post header styles */
+header h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    color: #35424a; /* Dark blue-grey for blog title */
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Section styles for blog content */
+section {
+    background: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* New color scheme for the main content section */
+.new-color-scheme {
+    background-color: #e0f7fa; /* Light cyan background for the section */
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Animations for new classes */
+.fade-in-title {
+    animation: fadeIn 1.5s ease-out forwards;
+    color: #00796b; /* Teal color for the main title */
+}
+
+.fade-in-text-slow {
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Delay for the paragraph */
+    color: #004d40; /* Darker teal for the paragraph */
+}
+
+.section-title-animation {
+    animation: slideInFromLeft 1s ease-out forwards;
+    color: #00796b; /* Teal color for section titles */
+    margin-bottom: 15px;
+}
+
+.content-text-animation {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s; /* Delay for content paragraphs */
+    color: #004d40; /* Darker teal for content */
+    font-size: 17px; /* Slightly larger font for readability */
+}
+
+/* Applying animations to specific elements as per original CSS */
+/* The original CSS applied animations to h2 within .blog-post.
+   Since the HTML uses section h2, we'll apply animations to section h2. */
+section h2:nth-child(odd) { /* This will apply to the first h2, third h2, etc. */
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+section h2:nth-child(even) { /* This will apply to the second h2, fourth h2, etc. */
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Removed .blog-post styles as they are not used in the provided HTML */
+/* Removed .container styles as .page-wrapper is used */
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding:1rem 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 0, 0.2));
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--color-3);
+}
+
+.footer p {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes borderRotate {
+    0% { border-color: var(--color-1); }
+    25% { border-color: var(--color-2); }
+    50% { border-color: var(--color-3); }
+    75% { border-color: var(--color-4); }
+    100% { border-color: var(--color-5); }
+}

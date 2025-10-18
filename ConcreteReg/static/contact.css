@@ -1,0 +1,216 @@
+/* Styles for the contact form, incorporating elements from index.css for enhanced appearance */
+
+/* Base Styles */
+body {
+    font-family: "Poppins", sans-serif; /* Inherit font from index.css */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%); /* Use gradient from index.css */
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--text); /* Use text color variable from index.css */
+}
+
+/* Ensure header and footer styles from index.css are prioritized if they exist */
+/* If contact.html links to index.css, those styles will apply. This file focuses on form elements. */
+
+/* Container for the contact section */
+.container {
+    max-width: 800px;
+    margin: 5rem auto 2rem auto; /* Adjust margin for spacing */
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 222, 173, 0.9), rgba(255, 218, 185, 0.9)); /* Use gradient from index.css */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 127, 80, 0.3); /* Use shadow from index.css */
+    animation: float 6s ease-in-out infinite; /* Use animation from index.css */
+    border: 3px solid transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+/* Contact Section Title */
+#contact h2 {
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5)); /* Use gradient from index.css */
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 5s ease infinite; /* Use animation from index.css */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555; /* Slightly darker text for description */
+}
+
+/* Form Styles */
+form {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: 1fr; /* Single column for mobile-first */
+    gap: 1.5rem;
+    animation: float 4s ease-in-out infinite; /* Apply animation to form container */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333; /* Darker label color */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 1rem;
+    border: 2px solid #FFA07A; /* Use color from index.css */
+    border-radius: 1rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #F0E68C 0%, #FAFAD2 100%); /* Use gradient from index.css */
+    color: #2D1810; /* Use text color from index.css */
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    transform: scale(1.02);
+    border-color: #FF7F50; /* Use color from index.css */
+    box-shadow: 0 0 20px rgba(255, 127, 80, 0.3); /* Use shadow from index.css */
+    background: linear-gradient(135deg, #FFDAB9 0%, #FFF8DC 100%); /* Use gradient from index.css */
+}
+
+textarea {
+    min-height: 150px; /* Make textarea larger */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Submit Button */
+.submit-btn {
+    display: block; /* Make it a block element for centering */
+    width: fit-content; /* Adjust width to content */
+    margin: 1.5rem auto 0 auto; /* Center the button and add top margin */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-3), var(--color-4), var(--color-5)); /* Use gradient from index.css */
+    background-size: 300% 300%;
+    color: white;
+    animation: rainbow 5s ease infinite, pulse 2s infinite ease-in-out; /* Add pulse animation */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Enhance hover shadow */
+}
+
+/* New animation for pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Email Link */
+.container p a {
+    color: var(--color-1); /* Use a vibrant color for the link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.container p a:hover {
+    color: var(--color-2); /* Darker shade on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments for Form */
+@media (min-width: 768px) {
+    form {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    }
+    
+    /* Adjust label and input for two-column layout if needed */
+    form .form-group:nth-child(odd) {
+        margin-right: 0.75rem; /* Spacing between columns */
+    }
+    form .form-group:nth-child(even) {
+        margin-left: 0.75rem; /* Spacing between columns */
+    }
+}
+
+/* Animations from index.css that can be applied */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* Style for the email box */
+.email-box {
+    margin-top: 2rem; /* Add space between submit button and email box */
+    margin-left: auto; /* Center the box horizontally */
+    margin-right: auto; /* Center the box horizontally */
+    padding: 1rem; /* Reduced padding */
+    background: linear-gradient(135deg, rgba(255, 222, 173, 0.7), rgba(255, 218, 185, 0.7)); /* Subtle gradient background */
+    border: 2px solid #FFA07A; /* Border color */
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(255, 127, 80, 0.2); /* Soft shadow */
+    text-align: center; /* Center the text inside the box */
+    animation: float 5s ease-in-out infinite; /* Apply float animation */
+}
+
+.email-box p {
+    margin: 0; /* Remove default paragraph margin */
+    color: #333; /* Darker text color for readability */
+    font-size: 1rem; /* Reduced font size */
+    text-align: center; /* Ensure text is centered within the paragraph */
+}
+
+.email-box a {
+    color: var(--color-1); /* Use a vibrant color for the link */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.email-box a:hover {
+    color: var(--color-2); /* Darker shade on hover */
+    text-decoration: underline;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Ensure the form elements inherit or use styles consistent with index.css */
+/* The existing contact.html links to index.css, so we are enhancing the form styling here. */
